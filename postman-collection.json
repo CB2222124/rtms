@@ -1,0 +1,484 @@
+{
+	"info": {
+		"_postman_id": "5acedc30-c203-47b9-9466-e3bd825252cb",
+		"name": "Road Tax Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27126163"
+	},
+	"item": [
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "Tax class",
+					"item": [
+						{
+							"name": "Get a tax class",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/taxClasses/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"taxClasses",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create tax class",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"An example vehicle tax class\",\n    \"pricePence\": 10000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/taxClasses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"taxClasses"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put a tax class",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"description\": \"A new vehicle tax class has been put here\",\n    \"pricePence\": 10000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/taxClasses",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"taxClasses"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vehicle",
+					"item": [
+						{
+							"name": "Create vehicle",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registration\": \"ABC123\",\n    \"make\": \"Toyota\",\n    \"model\": \"MR2\",\n    \"year\": 1993,\n    \"mileage\": 100000,\n    \"colour\": \"Blue\",\n    \"owner\": 1,\n    \"taxClass\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"vehicles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get vehicle by registration",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/vehicles/registration/ABC123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"vehicles",
+										"registration",
+										"ABC123"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get vehicles for owner",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/vehicles/owner1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"vehicles",
+										"owner1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch vehicle owner",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registration\": \"ABC123\",\n    \"owner\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/vehicles/owner",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"vehicles",
+										"owner"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch vehicle SORN status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registration\": \"ABC123\",\n    \"sorn\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/vehicles/sorn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"vehicles",
+										"sorn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch vehicle tax class",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registration\": \"ABC123\",\n    \"taxClass\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/vehicles/taxClass",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"vehicles",
+										"taxClass"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tax",
+					"item": [
+						{
+							"name": "Tax a vehicle",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registration\": \"ABC123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/tax",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"tax"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvd2NBMkJJdzdlb3c5U0NzeDJ3NnVpTGxjQlZGakZWVk9CS1NTdkk3RVgwIn0.eyJleHAiOjE2ODM2NzU5NjksImlhdCI6MTY4MzY3NTY2OSwianRpIjoiZDY2OGUxYmMtYTliNy00YmY0LTgxM2ItOGVmOWZjN2RlZTU3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9ydG1zIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImIwZmQ0YmRkLTFjNjctNDc3MC04ODBlLTA0ZmIxOWUxNmZlMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InJ0bXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIyMTAzNTg0NC1iOWI3LTQ2NjctYTllZC1iMjIxMDZjMmRiMDciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcnRtcyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjIxMDM1ODQ0LWI5YjctNDY2Ny1hOWVkLWIyMjEwNmMyZGIwNyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoib3duZXIxIn0.MknQ__iteWEh_xYoo86q9k6NHv5tvEG1VbTI6Lzc_qAAMJ1E7UkmxEuVXH3mQPGGiQ98PYC0ASeQfV192__j4_uhG_G8sTcNnOpoOhIEjolC3KRG72Iq0beGy0n2DiRXjOU5gxkzgD3P3A_AYkOqPCkU4lSe1NlY0Av7kEK3xaKRlnuPcTUmhsvcnIdI1g1v4SdFaELM1ogs4E0vSBxyM5K4VlxbvfdLQxAS8fp2XDQr7B95jAJ8kdBBMPaJXyM44wa4ecjEqZ8QRFbJR3oube8W9Ej4kgRcDP-I9P_VqIDRo_9SQOUn-zKLFP4VzFmZZsj6dmJD7cOSu-HUsHwPYg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Owner token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "client_id",
+							"value": "rtms-service",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "owner1",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "owner1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token from refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "default"
+						},
+						{
+							"key": "client_id",
+							"value": "rtms-service",
+							"type": "default"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ZDYzMTk3ZC02MDViLTQ0OTAtYjU5Zi02NDdlODdmNjNjNDMifQ.eyJleHAiOjE2ODM2Mzg1ODYsImlhdCI6MTY4MzYzNjc4NiwianRpIjoiNTg4NDQ0MGEtNjk5Yi00NGExLTlmMWEtZGI3NTcxODg2MDE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9ydG1zIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9ydG1zIiwic3ViIjoiMjRmYzFjMGMtNjhkMC00YTZmLTkzZjYtNGRkMDUyNDhmNTUyIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InJ0bXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiJhMmIwYWQ2ZC04MjFlLTRkMTctYmNhOC03NzljMDUyOGRmOGEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiJhMmIwYWQ2ZC04MjFlLTRkMTctYmNhOC03NzljMDUyOGRmOGEifQ.IAEHC4-5gGQ4Qfyfdn5VJmPpm9fUOf_3HvDNAe6E8G0",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/rtms/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"rtms",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "client_id",
+							"value": "rtms-service",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "owner1",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "owner1",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/realms/rtms/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"realms",
+						"rtms",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"owner1\",\r\n    \"password\": \"owner1\",\r\n    \"name\": \"owner1\",\r\n    \"email\": \"owner1@email.com\",\r\n    \"address\": {\r\n        \"line1\": \"Address Line 1\",\r\n        \"line2\": \"Address Line 2\",\r\n        \"city\": \"City\",\r\n        \"county\": \"County\",\r\n        \"postcode\": \"ABC123\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/owners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"owners"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

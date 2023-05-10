@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+     - DATASOURCE=jdbc:postgresql://database:5432/rtms
+     - DATASOURCE_USERNAME=postgres
+     - DATASOURCE_PASSWORD=postgres
+     - PORT=8081
+     - JWT_ISSUER_URI=http://keycloak:8080/realms/rtms
+     - JWT_JWK_SET_URI=http://keycloak:8080/realms/rtms/protocol/openid-connect/certs
+     - JWT_TOKEN_URI=http://keycloak:8080/realms/rtms/protocol/openid-connect/token
+     - JWT_MASTER_TOKEN_URI=http://keycloak:8080/realms/master/protocol/openid-connect/token
+     - JWT_USERS_URI=http://keycloak:8080/admin/realms/rtms/users
+     - KEYCLOAK_ADMIN=admin
+     - KEYCLOAK_ADMIN_PASSWORD=admin
+     - KEYCLOAK_ADMIN_ROLENAME=admin
+     - KEYCLOAK_OWNER_ROLENAME=owner
+    ports:
+      - "8081:8081"
+    depends_on:
+      database:
+        condition: service_healthy
+      keycloak:
+        condition: service_started
+
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_DB=rtms
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:21.1.1
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev --import-realm
