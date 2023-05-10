@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "5acedc30-c203-47b9-9466-e3bd825252cb",
+		"_postman_id": "da780d13-cab4-4531-a934-c4044f972993",
 		"name": "Road Tax Management System",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "27126163"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -290,7 +289,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJvd2NBMkJJdzdlb3c5U0NzeDJ3NnVpTGxjQlZGakZWVk9CS1NTdkk3RVgwIn0.eyJleHAiOjE2ODM2NzU5NjksImlhdCI6MTY4MzY3NTY2OSwianRpIjoiZDY2OGUxYmMtYTliNy00YmY0LTgxM2ItOGVmOWZjN2RlZTU3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9ydG1zIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImIwZmQ0YmRkLTFjNjctNDc3MC04ODBlLTA0ZmIxOWUxNmZlMCIsInR5cCI6IkJlYXJlciIsImF6cCI6InJ0bXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiIyMTAzNTg0NC1iOWI3LTQ2NjctYTllZC1iMjIxMDZjMmRiMDciLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbImh0dHA6Ly9sb2NhbGhvc3Q6ODA4MSJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsImRlZmF1bHQtcm9sZXMtcnRtcyJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInNpZCI6IjIxMDM1ODQ0LWI5YjctNDY2Ny1hOWVkLWIyMjEwNmMyZGIwNyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoib3duZXIxIn0.MknQ__iteWEh_xYoo86q9k6NHv5tvEG1VbTI6Lzc_qAAMJ1E7UkmxEuVXH3mQPGGiQ98PYC0ASeQfV192__j4_uhG_G8sTcNnOpoOhIEjolC3KRG72Iq0beGy0n2DiRXjOU5gxkzgD3P3A_AYkOqPCkU4lSe1NlY0Av7kEK3xaKRlnuPcTUmhsvcnIdI1g1v4SdFaELM1ogs4E0vSBxyM5K4VlxbvfdLQxAS8fp2XDQr7B95jAJ8kdBBMPaJXyM44wa4ecjEqZ8QRFbJR3oube8W9Ej4kgRcDP-I9P_VqIDRo_9SQOUn-zKLFP4VzFmZZsj6dmJD7cOSu-HUsHwPYg",
+						"value": "",
 						"type": "string"
 					}
 				]
@@ -381,23 +380,20 @@
 						},
 						{
 							"key": "refresh_token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ZDYzMTk3ZC02MDViLTQ0OTAtYjU5Zi02NDdlODdmNjNjNDMifQ.eyJleHAiOjE2ODM2Mzg1ODYsImlhdCI6MTY4MzYzNjc4NiwianRpIjoiNTg4NDQ0MGEtNjk5Yi00NGExLTlmMWEtZGI3NTcxODg2MDE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9ydG1zIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy9ydG1zIiwic3ViIjoiMjRmYzFjMGMtNjhkMC00YTZmLTkzZjYtNGRkMDUyNDhmNTUyIiwidHlwIjoiUmVmcmVzaCIsImF6cCI6InJ0bXMtc2VydmljZSIsInNlc3Npb25fc3RhdGUiOiJhMmIwYWQ2ZC04MjFlLTRkMTctYmNhOC03NzljMDUyOGRmOGEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiJhMmIwYWQ2ZC04MjFlLTRkMTctYmNhOC03NzljMDUyOGRmOGEifQ.IAEHC4-5gGQ4Qfyfdn5VJmPpm9fUOf_3HvDNAe6E8G0",
+							"value": "refresh_token_here",
 							"type": "default"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/realms/rtms/protocol/openid-connect/token",
+					"raw": "http://localhost:8081/auth/token",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
-						"realms",
-						"rtms",
-						"protocol",
-						"openid-connect",
+						"auth",
 						"token"
 					]
 				}
@@ -424,28 +420,25 @@
 						},
 						{
 							"key": "username",
-							"value": "owner1",
+							"value": "admin",
 							"type": "default"
 						},
 						{
 							"key": "password",
-							"value": "owner1",
+							"value": "admin",
 							"type": "default"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8080/realms/rtms/protocol/openid-connect/token",
+					"raw": "http://localhost:8081/auth/token",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
-						"realms",
-						"rtms",
-						"protocol",
-						"openid-connect",
+						"auth",
 						"token"
 					]
 				}

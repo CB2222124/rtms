@@ -46,10 +46,10 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/taxClasses").hasRole(ADMIN)
                 .requestMatchers(HttpMethod.POST, "/taxClasses").hasRole(ADMIN)
                 //Tax request.
-                .requestMatchers(HttpMethod.POST, "/tax").hasRole(OWNER)
+                .requestMatchers(HttpMethod.POST, "/tax").authenticated()
                 //Vehicle query requests.
                 .requestMatchers(HttpMethod.GET, "/vehicles/registration/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/vehicles/**").authenticated() //TODO: @Method level security with @PreAuthorize to require admin role to to be the specific user.
+                .requestMatchers(HttpMethod.GET, "/vehicles/**").authenticated() //TODO: @Method level security with @PreAuthorize to require admin role or to be the specific user.
                 //Vehicle change requests.
                 .requestMatchers(HttpMethod.PATCH, "/vehicles/owner").hasRole(ADMIN)
                 .requestMatchers(HttpMethod.PATCH, "/vehicles/sorn").hasRole(ADMIN)
